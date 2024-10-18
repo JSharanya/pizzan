@@ -10,8 +10,68 @@ import "../../src/index.css";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import Reservation from "../component/Reservation";
 
 const Home = () => {
+  const menuItems = [
+    {
+      name: "Vegetables Burger",
+      price: "$27.00",
+      description: "American-inspired sushi roll",
+      image: "path/to/image", // Replace with actual image paths or URLs
+      rating: 5,
+    },
+    {
+      name: "Hamburger Burger",
+      price: "$27.00",
+      description: "Chow mien Fried noodles",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Delicious Cheeseburger",
+      price: "$27.00",
+      description: "Barbecue Italian cuisine",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Brief Barger",
+      price: "$27.00",
+      description: "Japanese Cuisine Chicken",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Spacial Barger",
+      price: "$27.00",
+      description: "Barbecue Italian cuisine pizza",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Hamburger",
+      price: "$39.00",
+      description: "Barbecue Italian cuisine pizza",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Chicken Barger",
+      price: "$25.00",
+      description: "American-inspired sushi roll",
+      image: "path/to/image",
+      rating: 5,
+    },
+    {
+      name: "Brief Pizza",
+      price: "$25.00",
+      description: "Barbecue Italian cuisine pizza",
+      image: "path/to/image",
+      rating: 5,
+    },
+  ];
+
   return (
     <div>
       <Navbar />
@@ -255,7 +315,7 @@ const Home = () => {
           </SwiperSlide>
         </div>
       </Swiper>
-{/* 
+      {/* 
       <div>
         <section class="overflow-hidden bg-white py-8 sm:py-16">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -373,72 +433,319 @@ const Home = () => {
       </div> */}
 
       <section className="container mx-auto p-10 flex flex-col md:flex-row items-center justify-between">
-      {/* Left Section - Image */}
-      <div className="relative w-full md:w-1/2">
-        <img
-          src="/image_2.png"
-          alt="Popular Food"
-          className=" w-full md:w-4/5 lg:w-full object-cover"
-        />
-       
-      </div>
-
-      {/* Right Section - Content */}
-      <div className="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
-        <h3 className="text-red-500 text-lg font-semibold">About Company</h3>
-        <h2 className="text-4xl font-bold mt-2">
-          Where Quality Food Meet Excellent Service.
-        </h2>
-        <p className="text-gray-600 mt-4">
-          It’s the perfect dining experience where every dish is crafted with
-          fresh, high-quality ingredients and served by friendly staff.
-        </p>
-
-        {/* Cards Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-          <div className="p-4 shadow-lg rounded-lg border">
-            <img
-              src="/image_3.png"
-              alt="Fast Foods"
-              className="w-12 h-12 mx-auto"
-            />
-            <h4 className="text-xl font-semibold mt-4">Fast Foods</h4>
-            <p className="text-gray-500 mt-2">
-              Health foods are nutrient-dense foods.
-            </p>
-          </div>
-          <div className="p-4 shadow-lg rounded-lg border border-red-500">
-            <img
-              src="/image_4.png"
-              alt="Fast Foods"
-              className="w-12 h-12 mx-auto"
-            />
-            <h4 className="text-xl font-semibold mt-4">Fast Foods</h4>
-            <p className="text-gray-500 mt-2">
-              Health foods are nutrient-dense foods.
-            </p>
-          </div>
+        {/* Left Section - Image */}
+        <div className="relative w-full md:w-1/2">
+          <img
+            src="/image_2.png"
+            alt="Popular Food"
+            className=" w-full md:w-4/5 lg:w-full object-cover"
+          />
         </div>
 
-        {/* Button and CEO Info */}
-        <div className="flex items-center mt-8 space-x-4">
-          <button className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition">
-            About More
-          </button>
-          <div className="flex items-center">
-            <img
-              src="/image_5.png"
-              alt="CEO"
-              className="w-10 h-10 rounded-full"
-            />
-            <div className="ml-3">
-              <p className="font-semibold">Ronald Richards</p>
-              <p className="text-sm text-gray-500">Founder & CEO</p>
+        {/* Right Section - Content */}
+        <div className="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
+          <h3 className="text-red-500 text-lg font-semibold">About Company</h3>
+          <h2 className="text-4xl font-bold mt-2">
+            Where Quality Food Meet Excellent Service.
+          </h2>
+          <p className="text-gray-600 mt-4">
+            It’s the perfect dining experience where every dish is crafted with
+            fresh, high-quality ingredients and served by friendly staff.
+          </p>
+
+          {/* Cards Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            <div className="p-4 shadow-lg rounded-lg border">
+              <img
+                src="/image_3.png"
+                alt="Fast Foods"
+                className="w-12 h-12 mx-auto"
+              />
+              <h4 className="text-xl font-semibold mt-4">Fast Foods</h4>
+              <p className="text-gray-500 mt-2">
+                Health foods are nutrient-dense foods.
+              </p>
+            </div>
+            <div className="p-4 shadow-lg rounded-lg border border-red-500">
+              <img
+                src="/image_4.png"
+                alt="Fast Foods"
+                className="w-12 h-12 mx-auto"
+              />
+              <h4 className="text-xl font-semibold mt-4">Fast Foods</h4>
+              <p className="text-gray-500 mt-2">
+                Health foods are nutrient-dense foods.
+              </p>
+            </div>
+          </div>
+
+          {/* Button and CEO Info */}
+          <div className="flex items-center mt-8 space-x-4">
+            <button className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition">
+              About More
+            </button>
+            <div className="flex items-center">
+              <img
+                src="/image_5.png"
+                alt="CEO"
+                className="w-10 h-10 rounded-full"
+              />
+              <div className="ml-3">
+                <p className="font-semibold">Ronald Richards</p>
+                <p className="text-sm text-gray-500">Founder & CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-white py-12">
+        <div className="text-center">
+          <h2 className="text-red-500 font-bold text-lg">Best Food Menu</h2>
+          <h1 className="text-3xl font-bold my-4">Our Best Foods Menus</h1>
+        </div>
+
+        <div className="flex justify-center space-x-12 mt-8">
+          <div className="text-center">
+            <div className="text-4xl">🍔</div>
+            <p className="font-bold text-red-500 mt-2">Beef Burger</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl">🍕</div>
+            <p className="font-bold mt-2">Chicken Pizza</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl">🍝</div>
+            <p className="font-bold mt-2">Fresh Pasta</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl">🍣</div>
+            <p className="font-bold mt-2">Hot Sushi</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl">🍹</div>
+            <p className="font-bold mt-2">Drink & Juice</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-1 flex flex-wrap items-center justify-center">
+        <div class="flex space-x-4">
+          <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
+            <div class="px-4 py-5 sm:px-6">
+              <div class="flex justify-between items-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">
+                  Contact Details
+                </h3>
+                <button class="text-sm font-medium text-gray-500">
+                  Update
+                </button>
+              </div>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                The contact information is provided below.
+              </p>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+              <dl class="sm:divide-y sm:divide-gray-200">
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">Full name</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    John Doe
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">
+                    Email address
+                  </dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    johndoe@example.com
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">
+                    Phone number
+                  </dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    (123) 456-7890
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">
+                    Contact Type
+                  </dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    Employee
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">Company</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    BoxPower
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">Job Title</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    Project Engineer
+                  </dd>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dt class="text-sm font-medium text-gray-500">Department</dt>
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    Civil & Electrical
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="bg-white overflow-hidden shadow rounded-lg border box">
+            <div class="px-4 py-5 sm:px-6">
+              <div class="flex justify-between items-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">
+                  Assigned Project Sites
+                </h3>
+                <button class="text-sm font-medium text-gray-500 mx-4">
+                  Add
+                </button>
+              </div>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                You can find the project sites assigned to this contact below.
+              </p>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+              <dl class="sm:divide-y sm:divide-gray-200">
+                <div class="flex justify-center items-center py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    <div className="flex items-center">
+                      <img
+                        src="path/to/image"
+                        alt="Vegetables Burger"
+                        className="w-16 h-16 rounded-full mr-4 border-2 border-red-500"
+                      />
+                      <div>
+                        <h2 className="text-lg font-semibold flex items-center">
+                          Vegetables Burger
+                        </h2>
+                        <p className="text-sm text-gray-500">
+                          American-inspired sushi roll
+                        </p>
+                        <div className="text-red-500 flex">★★★★★</div>
+                      </div>
+                    </div>
+                  </dd>
+                  <span className="text-pink-500 text-xl font-bold">
+                      $27.00
+                    </span>
+                  <div class="text-sm font-medium text-gray-500">
+                    <span className="text-pink-500 text-xl font-bold">
+                      $27.00
+                    </span>
+                  </div>
+                </div>
+
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    RG 301 <br />
+                    Lagrand Valley
+                  </dd>
+                  <button class="text-sm font-medium text-gray-500">
+                    Remove
+                  </button>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    RG 301 <br />
+                    Wahl Ranch
+                  </dd>
+                  <button class="text-sm font-medium text-gray-500">
+                    Remove
+                  </button>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    RG 301 <br />
+                    Lagrand Valley
+                  </dd>
+                  <button class="text-sm font-medium text-gray-500">
+                    Remove
+                  </button>
+                </div>
+                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                    RG 301 <br />
+                    Wahl Ranch
+                  </dd>
+                  <button class="text-sm font-medium text-gray-500">
+                    Remove
+                  </button>
+                </div>
+              </dl>
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <div>
+        <div className="flex justify-center items-center min-h-screen">
+          <div className="max-w-3xl w-full p-6 bg-white rounded-lg ">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {menuItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 p-4 rounded-lg flex justify-between items-center"
+                >
+                  <div className="flex items-center">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-16 h-16 rounded-full mr-4"
+                    />
+                    <div>
+                      <h2 className="text-lg font-semibold">{item.name}</h2>
+                      <p className="text-sm text-gray-500">
+                        {item.description}
+                      </p>
+                      <div className="text-yellow-500 flex">
+                        {Array(item.rating)
+                          .fill()
+                          .map((_, i) => (
+                            <span key={i}>★</span>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-red-500 font-semibold">{item.price}</div>
+                  <div className="text-red-500 font-semibold">{item.price}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between items-center py-4 border-b">
+          <div className="flex items-center">
+            <img
+              src="path/to/image"
+              alt="Vegetables Burger"
+              className="w-16 h-16 rounded-full mr-4 border-2 border-red-500"
+            />
+            <div>
+              <h2 className="text-lg font-semibold flex items-center">
+                Vegetables Burger
+                <span className="flex-grow border-dotted border-t border-gray-300 mx-2"></span>
+                <span className="text-pink-500 text-xl font-bold">$27.00</span>
+              </h2>
+              <p className="text-sm text-gray-500">
+                American-inspired sushi roll
+              </p>
+              <div className="text-red-500 flex">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+<Reservation/>
+
+      </div>
     </div>
   );
 };
