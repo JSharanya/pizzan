@@ -1,11 +1,12 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const app = express();
+dotenv.config()
 
-const uri = 'mongodb+srv://user123:user123@pizzan-web.oyzrf.mongodb.net/?retryWrites=true&w=majority&appName=pizzan-web'; // Add your database name instead of <dbname>
 
-mongoose.connect(uri)
+
+mongoose.connect(process.env.MONGO)
   .then(() => {
     console.log('MongoDB is connected');
   })
@@ -13,8 +14,12 @@ mongoose.connect(uri)
     console.error('Error connecting to MongoDB:', err);
   });
 
+
+  const app = express();
+
 app.listen(3000,()=>{
     console.log('Server is running on port 3000');
 })
+
 
 
