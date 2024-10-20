@@ -2,4 +2,14 @@
     border: none !important; /* Force remove border */
     outline: none !important; /* Force remove outline */
     box-shadow: none !important; /* Remove any box-shadow */
+
 }
+
+
+.sidebar-item-custom {
+    color: black !important;
+  }
+  
+  .sidebar-item-custom:hover {
+    color: #4a5568 !important; /* Tailwind's gray-800 */
+  }
