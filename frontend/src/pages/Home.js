@@ -1,5 +1,5 @@
 import Navbar from "../component/Navbar";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -71,6 +71,33 @@ const Home = () => {
       rating: 5,
     },
   ];
+
+
+  const [menu,setMenu]=useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/menu/all-menu');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setMenu(data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchMenu();
+  }, []);
+
+
 
   return (
     <div>
@@ -173,7 +200,37 @@ const Home = () => {
         className="mySwiper"
       >
         <div class="p-1 flex flex-wrap items-center justify-center">
-          <SwiperSlide>
+        {menu.map((menu)=>(
+            <SwiperSlide key={menu._id}>
+            <div
+              class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
+              style={{ backgroundColor: "#faf7f2" }}
+            >
+              <div class="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
+                <img
+                  class="w-40 h-40 rounded-full object-cover"
+                  src={menu.imageUrl}
+                  alt={menu.name}
+                />
+              </div>
+              <div class="relative text-white px-6 pb-6 mt-6">
+                <span class="block opacity-75 -mb-1 text-center text-black font-extrabold ">
+                  {menu.name}
+                </span>
+
+                <span class="block text-sm text-center pt-3 text-black">
+                  {menu.description}
+                </span>
+
+                <span class="block text-xs font-bold px-2 py-2  items-center text-red-900">
+                  LKR {menu.price}
+                </span>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+          {/* <SwiperSlide>
             <div
               class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
               style={{ backgroundColor: "#faf7f2" }}
@@ -228,35 +285,7 @@ const Home = () => {
                 </span>
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
-              style={{ backgroundColor: "#faf7f2" }}
-            >
-              <div class="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
-                <img
-                  class="relative w-40"
-                  src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
-                  alt=""
-                />
-              </div>
-              <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1 text-center text-black font-extrabold ">
-                  Indoor
-                </span>
-
-                <span class="block font-semibold text-xl text-center  text-black">
-                  Peace Lily
-                </span>
-
-                <span class="block text-xs font-bold px-2 py-2  items-center text-red-900">
-                  $36.00
-                </span>
-              </div>
-            </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide>
             <div
               class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
