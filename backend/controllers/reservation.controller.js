@@ -10,10 +10,11 @@ export const createReservation = async (req, res) => {
     }
 
     try {
+        const formattedDate = new Date(reservationDate);
         const reservation = new Reservation({
             customerName,
             contactInfo,
-            reservationDate,
+            reservationDate: formattedDate,
             reservationTime,
             numberOfPeople,
         });
@@ -29,7 +30,14 @@ export const createReservation = async (req, res) => {
 export const getReservations = async (req, res) => {
     try {
         const reservations = await Reservation.find();
-        res.status(200).json(reservations);
+        const formattedReservations = reservations.map(reservation => {
+            const formattedDate = reservation.reservationDate.toISOString().split('T')[0]; // Format to YYYY-MM-DD
+            return {
+                ...reservation._doc,
+                reservationDate: formattedDate
+            };
+        });
+        res.status(200).json(formattedReservations);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
