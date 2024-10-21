@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../component/Reservation.css'
 
 const Reservation = () => {
   // Initial form state
@@ -61,15 +62,17 @@ const Reservation = () => {
   };
 
   return (
-    <>
-      <section className="relative container mx-auto p-5">
+
+    <div >
+       <section className="relative ">
         <ToastContainer />
         <img
           src="/image_6.png"
           alt="Restaurant Background"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 "
+
         />
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className=" px-5 py-14  grid grid-cols-1 lg:grid-cols-2 ">
           <div className="relative flex justify-center items-center">
             <div className="relative z-20 p-10 rounded-lg w-full max-w sm:max-w">
               <h3 className="text-red-500 text-lg font-semibold">
@@ -157,8 +160,112 @@ const Reservation = () => {
           </div>
         </div>
       </section>
-    </>
+
+  
+    </div>
+    
+     
+    
   );
 };
 
 export default Reservation;
+
+
+
+{/* <section class="relative">
+<ToastContainer />
+ <img
+ src="/image_6.png"
+ alt="Restaurant Background"
+ className="absolute inset-0 w-full h-full object-cover z-0 "
+
+/>
+<div class="container mx-auto  px-5 py-24 md:flex-row flex-col items-center grid grid-cols-1 lg:grid-cols-2 ">
+<div className="relative flex justify-center items-center">
+   <div className="relative  p-10 rounded-lg w-full max-w sm:max-w">
+     <h3 className="text-red-500 text-lg font-semibold">
+       Booking Table
+     </h3>
+     <h2 className="text-4xl font-bold text-white mb-6">
+       Make a Reservation
+     </h2>
+
+     <form className="space-y-4" onSubmit={handleSubmit}>
+     
+       <div className="flex space-x-4">
+         <div className="relative w-1/2">
+           <input
+             type="text"
+             name="customerName"
+             placeholder="Name"
+             value={formData.customerName}
+             onChange={handleChange}
+             required
+             className="w-full bg-white text-gray-700 p-4 rounded-lg focus:outline-none"
+           />
+         </div>
+         <div className="relative w-1/2">
+           <input
+             type="text"
+             name="contactInfo"
+             placeholder="Phone Number"
+             value={formData.contactInfo}
+             onChange={handleChange}
+             required
+             className="w-full bg-white text-gray-700 p-4 rounded-lg focus:outline-none"
+           />
+         </div>
+       </div>
+       <div className="flex space-x-4">
+         <div className="relative w-1/2">
+           <input
+             type="date"
+             name="reservationDate"
+             placeholder="Select Date"
+             value={formData.reservationDate}
+             onChange={handleChange}
+             required
+             className="w-full bg-white text-gray-700 p-4 rounded-lg focus:outline-none"
+           />
+           <span className="absolute right-3 top-4 text-gray-500">📅</span>
+         </div>
+         <div className="relative w-1/2">
+           <input
+             type="time"
+             name="reservationTime"
+             placeholder="Select Time"
+             value={formData.reservationTime}
+             onChange={handleChange}
+             required
+             className="w-full bg-white text-gray-700 p-4 rounded-lg focus:outline-none"
+           />
+           <span className="absolute right-3 top-4 text-gray-500">⏰</span>
+         </div>
+       </div>
+
+       
+       <div className="relative">
+         <input
+           type="number"
+           name="numberOfPeople"
+           placeholder="Total Guests"
+           value={formData.numberOfPeople}
+           onChange={handleChange}
+           required
+           className="w-full bg-white text-gray-700 p-4 rounded-lg focus:outline-none"
+         />
+         <span className="absolute right-3 top-4 text-gray-500">👤</span>
+       </div>
+
+       <button 
+        type="submit" 
+       className="w-full bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600 transition" >
+         MAKE A RESERVATION
+       </button>
+     </form>
+   </div>
+ </div>
+
+</div>
+</section> */}
