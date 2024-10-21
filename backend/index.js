@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from './routes/auth.routes.js'
 import adminRoutes from './routes/admin.rotes.js';
 import menuRoutes from './routes/menu.routes.js';
+import reservationRoutes from './routes/reservation.rotes.js';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use('/api/auth',authRoutes)
 app.use('/api/menu',menuRoutes)
 app.use('/admin', adminRoutes);
+app.use('/api', reservationRoutes);
 
 mongoose
   .connect(process.env.MONGO)
