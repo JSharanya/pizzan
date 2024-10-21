@@ -1,30 +1,167 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const UploadFood = () => {
     const [isAddFormVisible, setIsAddFormVisible] = useState(false)
     const [isEditFormVisible, setIsEditFormVisible] = useState(false)
 
-    const handleAddClick = () => {
-        setIsAddFormVisible(true);
-        setIsEditFormVisible(false);
-      };
+    const [allMenu, setAllMenu] = useState([]);
+    const [newMenu, setNewMenu] = useState({
+      name: '',
+      description: '',
+      price: '',
+      imageUrl: '',
+    });
+
+    const [editMenu, setEditMenu] = useState(null);
+
+
+
+  const handleAddClick = () => {
+    setIsAddFormVisible(true);
+    setIsEditFormVisible(false);
+    setNewMenu({ name: '', description: '', price: '', imageUrl: '' }); // Reset the form
+  };
+
+    const handleEditClick = (menu) => {
+      setIsEditFormVisible(true);
+      setIsAddFormVisible(false);
+      setEditMenu(menu);  // Set the selected menu item for editing
+      setNewMenu({
+        name: menu.name,
+        description: menu.description,
+        price: menu.price,
+        imageUrl: menu.imageUrl,
+      }); // Pre-fill the form with selected item data
+    };
     
-      const handleEditClick = () => {
-        setIsEditFormVisible(true);
-        setIsAddFormVisible(false);
-      };
+      // const handleEditClick = () => {
+      //   setIsEditFormVisible(true);
+      //   setIsAddFormVisible(false);
+      // };
     
       const handleCancelClick = () => {
         setIsAddFormVisible(false);
         setIsEditFormVisible(false);
+        setEditMenu(null); // Clear the edit state
       };
+  
+
+      useEffect(() => {
+        fetch("http://localhost:3000/api/menu/all-menu").then(
+          res => res.json()
+        ).then(data => setAllMenu(data))
+      }, [])
+
+
+      // const handleSaveClick = async () => {
+      //   // Save new menu item
+      //   try {
+      //     const response = await fetch('http://localhost:3000/api/menu/upload-menu', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //       body: JSON.stringify(newMenu),
+      //     });
     
-      const handleSaveClick = () => {
-        // Perform save action
-        setIsAddFormVisible(false);
-        setIsEditFormVisible(false);
+      //     if (!response.ok) {
+      //       throw new Error('Failed to save new menu');
+      //     }
+    
+      //     const savedMenu = await response.json();
+      //     setAllMenu((prevMenu) => [...prevMenu, savedMenu]);
+      //     setNewMenu({ name: '', description: '', price: '', imageUrl: '' }); // Reset form fields
+      //     setIsAddFormVisible(false);
+      //     setIsEditFormVisible(false);
+      //   } catch (error) {
+      //     console.error(error);
+      //   }
+      // };
+
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewMenu((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
       };
 
+      const handlePostClick = async () => {
+        try {
+          const response = await fetch('http://localhost:3000/api/menu/upload-menu', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newMenu),
+          });
+    
+          if (!response.ok) {
+            throw new Error('Failed to add menu');
+          }
+    
+          const savedMenu = await response.json();
+          setAllMenu((prevMenu) => [...prevMenu, savedMenu]);
+          setNewMenu({ name: '', description: '', price: '', imageUrl: '' });
+          setIsAddFormVisible(false);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      // Function to handle updating an existing menu item (PUT)
+      const handlePutClick = async () => {
+        try {
+          const response = await fetch(`http://localhost:3000/api/menu/update-menu/${editMenu._id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newMenu),
+          });
+    
+          if (!response.ok) {
+            throw new Error('Failed to update menu');
+          }
+    
+          const updatedMenu = await response.json();
+          setAllMenu((prevMenu) =>
+            prevMenu.map((item) => (item._id === editMenu._id ? updatedMenu : item))
+          );
+          setEditMenu(null);
+          setIsEditFormVisible(false);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      const handleDeleteClick = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:3000/api/menu/delete-menu/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete menu');
+            }
+
+            // Remove the deleted item from the state
+            setAllMenu((prevMenu) => prevMenu.filter((menu) => menu._id !== id));
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    
+
+      const handleSaveClick = () => {
+        if (isEditFormVisible) {
+          handlePutClick(); // Update existing item
+        } else {
+          handlePostClick(); // Add new item
+        }
+      };
+      
 
 
   return (
@@ -75,19 +212,38 @@ const UploadFood = () => {
                       <label className="block text-sm font-medium text-gray-700">Food Name</label>
                       <input
                         type="text"
+                        name="name"
+                        value={newMenu.name}
+                        onChange={handleInputChange}
                         className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div className="mb-4">
                       <label className="block text-sm font-medium text-gray-700">Description</label>
                       <textarea
+                         name="description"
+                         value={newMenu.description}
+                         onChange={handleInputChange}
                         className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div className="mb-4">
                       <label className="block text-sm font-medium text-gray-700">Price</label>
                       <input
-                        type="number"
+                         type="text"
+                         name="price"
+                         value={newMenu.price}
+                         onChange={handleInputChange}
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                      <input
+                        type="text"
+                        name="imageUrl"
+                        value={newMenu.imageUrl}
+                        onChange={handleInputChange}
                         className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
@@ -116,13 +272,13 @@ const UploadFood = () => {
               <thead>
                 <tr>
                   <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Food Name
+                    Image URL
                   </th>
                   <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Food Name
+                  Menu Name
                   </th>
                   <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Price
+                  Description
                   </th>
                   <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Price
@@ -133,85 +289,110 @@ const UploadFood = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                  <th
-                    scope="row"
-                    class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                  >
-                    <img
-                      src="https://flowbite.s3.amazonaws.com/blocks/application-ui/products/imac-front-image.png"
-                      alt="iMac Front Image"
-                      class="w-14 h-14 mr-3"
-                    />
-                    
-                  </th>
-                  <td class=" py-4 whitespace-nowrap">Jane Doe</td>
-                  <td class="px-6 py-4 whitespace-nowrap">jane@example.com</td>
-                  <td class="px-6 py-4 whitespace-nowrap">Admin</td>
 
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out"
-                    onClick={handleEditClick}>
-                      Edit
-                    </button>
-                    <button class="ml-2 px-4 py-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+              {allMenu.map((menu, index)=>
+               <tbody class="bg-white divide-y divide-gray-200" key={menu._id}>
+               <tr>
+                 <th
+                   scope="row"
+                   class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                 >
+                   <img
+                     src={menu.imageUrl}
+                     alt="iMac Front Image"
+                     class="w-14 h-14 mr-3 rounded-full object-cover"
+                   />
+                   
+                 </th>
+                 <td class=" py-4 whitespace-nowrap">{menu.name}</td>
+                 <td class="px-6 py-4 whitespace-nowrap">{menu.description}</td>
+                 <td class="px-6 py-4 whitespace-nowrap">LKR {menu.price}</td>
+
+                 <td class="px-6 py-4 whitespace-nowrap">
+                   <button class="px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out"
+                   onClick={() => handleEditClick(menu)}>
+                     Edit
+                   </button>
+                   <button 
+                   onClick={() => handleDeleteClick(menu._id)}
+                   class="ml-2 px-4 py-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                     Delete
+                   </button>
+                 </td>
+               </tr>
+             </tbody>
+              
+              
+              )}
+             
             </table>
 
 
-            {isEditFormVisible && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="bg-white rounded-lg p-6 max-w-lg w-full">
-                <h3 className="mb-4 text-lg font-semibold">Edit Product</h3>
-                <form>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Food Name</label>
-                    <input
-                      type="text"
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      defaultValue="Sample Food"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Description</label>
-                    <textarea
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      defaultValue="Sample Description"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700">Price</label>
-                    <input
-                      type="number"
-                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                      defaultValue="12.99"
-                    />
-                  </div>
-                  <div className="flex space-x-2">
-                    <button
-                      type="button"
-                      className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md"
-                      onClick={handleSaveClick}
-                    >
-                      Save
-                    </button>
-                    <button
-                      type="button"
-                      className="px-4 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-md"
-                      onClick={handleCancelClick}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          )}
+         
+            {isEditFormVisible && editMenu && (
+                            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                                <div className="bg-white rounded-lg p-6 max-w-lg w-full">
+                                    <h3 className="mb-4 text-lg font-semibold">Edit Product</h3>
+                                    <form>
+                                        <div className="mb-4">
+                                            <label className="block text-sm font-medium text-gray-700">Food Name</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={newMenu.name}
+                                                onChange={handleInputChange}
+                                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="mb-4">
+                                            <label className="block text-sm font-medium text-gray-700">Description</label>
+                                            <textarea
+                                                name="description"
+                                                value={newMenu.description}
+                                                onChange={handleInputChange}
+                                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="mb-4">
+                                            <label className="block text-sm font-medium text-gray-700">Price</label>
+                                            <input
+                                                type="text"
+                                                name="price"
+                                                value={newMenu.price}
+                                                onChange={handleInputChange}
+                                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="mb-4">
+                                            <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                                            <input
+                                                type="text"
+                                                name="imageUrl"
+                                                value={newMenu.imageUrl}
+                                                onChange={handleInputChange}
+                                                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                                            />
+                                        </div>
+                                        <div className="flex space-x-2">
+                                            <button
+                                                type="button"
+                                                className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md"
+                                                onClick={handleSaveClick}
+                                            >
+                                                Save
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="px-4 py-2 text-white bg-gray-600 hover:bg-gray-700 rounded-md"
+                                                onClick={handleCancelClick}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        )}
             
 
           </div>
