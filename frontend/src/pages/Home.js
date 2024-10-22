@@ -715,36 +715,41 @@ const Home = () => {
         {/* Chef Card */}
 
         <div>
-        <div class="p-1 flex flex-wrap items-center justify-center">
+          <div class="p-1 flex flex-wrap items-center justify-center">
+            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+              <img
+                class=" object-cover w-52 h-80"
+                src="https://www.josejeuland.com/wp-content/uploads/2022/04/onsiteheadshot.jpg"
+                alt=""
+              />
+            </div>
+            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+              <img
+                class=" object-cover w-52 h-80"
+                src="https://media.istockphoto.com/id/1298088270/photo/young-beautiful-smiling-woman-chef-with-arms-crossed-at-kitchen.jpg?s=612x612&w=0&k=20&c=ZtYaFLtiRkuA6mQ8HK05xjZNvpb4ev2BS9g2Uc6mdww="
+                alt=""
+              />
+            </div>
+            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+              <img
+                class=" object-cover w-52 h-80 items-center"
+                src="https://i.pinimg.com/originals/d2/35/47/d2354797cfb995122e8bf0248cb1fd76.png"
+                alt=""
+              />
+            </div>
 
-<div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
-<img class=" object-cover w-52 h-80" src="https://www.josejeuland.com/wp-content/uploads/2022/04/onsiteheadshot.jpg" alt=""/>
-    
- 
-</div>
-<div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
-<img class=" object-cover w-52 h-80" src="https://media.istockphoto.com/id/1298088270/photo/young-beautiful-smiling-woman-chef-with-arms-crossed-at-kitchen.jpg?s=612x612&w=0&k=20&c=ZtYaFLtiRkuA6mQ8HK05xjZNvpb4ev2BS9g2Uc6mdww=" alt=""/>
-    
- 
-</div>
-<div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
-<img class=" object-cover w-52 h-80 items-center" src="https://i.pinimg.com/originals/d2/35/47/d2354797cfb995122e8bf0248cb1fd76.png" alt=""/>
-    
- 
-</div>
-
-<div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
-<img class=" object-cover w-52 h-80" src="https://media.gettyimages.com/id/1341912094/photo/portrait-of-a-successful-chef-at-a-restaurant-and-smiling.jpg?s=612x612&w=gi&k=20&c=50dCFawK5sCSIHpMkswvxeVaLzOMvSwQkM3P3wwn91A=" alt=""/>
-    
- 
-</div>
-
-
-        </div>
+            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+              <img
+                class=" object-cover w-52 h-80"
+                src="https://media.gettyimages.com/id/1341912094/photo/portrait-of-a-successful-chef-at-a-restaurant-and-smiling.jpg?s=612x612&w=gi&k=20&c=50dCFawK5sCSIHpMkswvxeVaLzOMvSwQkM3P3wwn91A="
+                alt=""
+              />
+            </div>
+          </div>
         </div>
 
         {/* Brand Icon Section */}
-{/* <section class="bg-white h-screen w-full flex justify-center items-center dark:bg-gray-900 p-8">
+        {/* <section class="bg-white h-screen w-full flex justify-center items-center dark:bg-gray-900 p-8">
             <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-16">
               <div class="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
                 <a class="flex items-center lg:justify-center" target="_blank">
@@ -1090,6 +1095,380 @@ const Home = () => {
         </div>
 
         <Reservation />
+
+        <div>
+          <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+        
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+              <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative">
+                  <a href="#">
+                    <img
+                      class="w-full"
+                      src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      alt="Sunset in the mountains"
+                    />
+                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                  </a>
+                  <a href="#!"></a>
+                </div>
+
+                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                  <span
+                    href="#"
+                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">16 Nov, 2022</span>
+                  </span>
+                  <div> | </div>
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">2 Comments</span>
+                  </span>
+                </div>
+                <div class="px-6 pb-4 mb-auto">
+                  <a
+                    href="#"
+                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                  >
+                    Simplest Salad Recipe ever
+                  </a>
+                  <p class="text-gray-500 text-sm border-t-black">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </p>
+                </div>
+                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                      />
+                    </svg>
+                  </span>
+                  <hr class="border-t-1  border-black" />
+                </div>
+              </div>
+
+              <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative">
+                  <a href="#">
+                    <img
+                      class="w-full"
+                      src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      alt="Sunset in the mountains"
+                    />
+                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                  </a>
+                  <a href="#!"></a>
+                </div>
+                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                  <span
+                    href="#"
+                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">16 Nov, 2022</span>
+                  </span>
+                  <div> | </div>
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">2 Comments</span>
+                  </span>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                  <a
+                    href="#"
+                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                  >
+                    Best FastFood Ideas (Yummy)
+                  </a>
+                  <p class="text-gray-500 text-sm">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </p>
+                </div>
+                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                      />
+                    </svg>
+                  </span>
+                  <hr class="border-t-1  border-black" />
+                </div>
+              </div>
+
+              <div class="rounded overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative">
+                  <a href="#">
+                    <img
+                      class="w-full"
+                      src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      alt="Sunset in the mountains"
+                    />
+                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                  </a>
+                  <a href="#!"></a>
+                </div>
+                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                  <span
+                    href="#"
+                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">16 Nov, 2022</span>
+                  </span>
+                  <div> | </div>
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z"
+                      />
+                    </svg>
+
+                    <span class="ml-1">2 Comments</span>
+                  </span>
+                </div>
+                <div class="px-6 py-4 mb-auto">
+                  <a
+                    href="#"
+                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                  >
+                    Why to eat salad?
+                  </a>
+                  <p class="text-gray-500 text-sm">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </p>
+                </div>
+                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                  <span
+                    href="#"
+                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                  >
+                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 12H5m14 0-4 4m4-4-4-4"
+                      />
+                    </svg>
+                  </span>
+                  <hr class="border-t-1  border-black" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+        <div className="container mx-auto px-2 py-8">
+      <h2 className="text-2xl font-bold mb-6 text-center">Food Gallery</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+        <div className="w-full h-48 overflow-hidden  shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-1"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden  shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-2"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/1639457/pexels-photo-1639457.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-3"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-4"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-5"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/411000/pexels-photo-411000.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="food-6"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+        </div>
       </div>
     </div>
   );
