@@ -11,6 +11,7 @@ import "../../src/index.css";
 // import required modules
 import { Pagination } from "swiper/modules";
 import Reservation from "../component/Reservation";
+import Footer from "../component/Footer";
 
 const Home = () => {
   const menuItems = [
@@ -498,221 +499,219 @@ const Home = () => {
         </div>
       </div>
 
-      <div class="p-1 flex flex-wrap items-center justify-center">
-        <div class="flex space-x-4">
-          <div class="bg-white overflow-hidden shadow rounded-lg border mx-4 box">
-            <div class="px-4 py-5 sm:px-6">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
-                  Contact Details
-                </h3>
-                <button class="text-sm font-medium text-gray-500">
-                  Update
-                </button>
-              </div>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                The contact information is provided below.
-              </p>
-            </div>
-            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-              <dl class="sm:divide-y sm:divide-gray-200">
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">Full name</dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    John Doe
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">
-                    Email address
-                  </dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    johndoe@example.com
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">
-                    Phone number
-                  </dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    (123) 456-7890
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">
-                    Contact Type
-                  </dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    Employee
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">Company</dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    BoxPower
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">Job Title</dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    Project Engineer
-                  </dd>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500">Department</dt>
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    Civil & Electrical
-                  </dd>
-                </div>
-              </dl>
-            </div>
+   
+      
+      <div>
+
+
+
+
+        <div className="max-w-6xl mx-auto p-4">
+  <div className="grid grid-cols-2 gap-2 ">
+    {/* Box 1 */}
+    <div className="border-2 border-dotted border-gray-300 p-4 rounded-lg">
+      {/* Item 1 */}
+      <div className=" rounded-lg p-2 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Vegetables Burger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Vegetables Burger</h3>
+            <span className="text-gray-600">
+              ------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
           </div>
-
-          <div class="bg-white overflow-hidden shadow rounded-lg border box">
-            <div class="px-4 py-5 sm:px-6">
-              <div class="flex justify-between items-center">
-                <h3 class="text-lg leading-6 font-medium text-gray-900">
-                  Assigned Project Sites
-                </h3>
-                <button class="text-sm font-medium text-gray-500 mx-4">
-                  Add
-                </button>
-              </div>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                You can find the project sites assigned to this contact below.
-              </p>
-            </div>
-            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
-              <dl class="sm:divide-y sm:divide-gray-200">
-                <div class="flex justify-center items-center py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    <div className="flex items-center">
-                      <img
-                        src="path/to/image"
-                        alt="Vegetables Burger"
-                        className="w-16 h-16 rounded-full mr-4 border-2 border-red-500"
-                      />
-                      <div>
-                        <h2 className="text-lg font-semibold flex items-center">
-                          Vegetables Burger
-                        </h2>
-                        <p className="text-sm text-gray-500">
-                          American-inspired sushi roll
-                        </p>
-                        <div className="text-red-500 flex">★★★★★</div>
-                      </div>
-                    </div>
-                  </dd>
-                  <span className="text-pink-500 text-xl font-bold">
-                    $27.00
-                  </span>
-                  <div class="text-sm font-medium text-gray-500">
-                    <span className="text-pink-500 text-xl font-bold">
-                      $27.00
-                    </span>
-                  </div>
-                </div>
-
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    RG 301 <br />
-                    Lagrand Valley
-                  </dd>
-                  <button class="text-sm font-medium text-gray-500">
-                    Remove
-                  </button>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    RG 301 <br />
-                    Wahl Ranch
-                  </dd>
-                  <button class="text-sm font-medium text-gray-500">
-                    Remove
-                  </button>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    RG 301 <br />
-                    Lagrand Valley
-                  </dd>
-                  <button class="text-sm font-medium text-gray-500">
-                    Remove
-                  </button>
-                </div>
-                <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    RG 301 <br />
-                    Wahl Ranch
-                  </dd>
-                  <button class="text-sm font-medium text-gray-500">
-                    Remove
-                  </button>
-                </div>
-              </dl>
-            </div>
+          <p className="text-gray-500 text-sm">American-inspired sushi roll</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
           </div>
         </div>
       </div>
-      <div>
-        <div className="flex justify-center items-center min-h-screen">
-          <div className="max-w-3xl w-full p-6 bg-white rounded-lg ">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-200 p-4 rounded-lg flex justify-between items-center"
-                >
-                  <div className="flex items-center">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-16 h-16 rounded-full mr-4"
-                    />
-                    <div>
-                      <h2 className="text-lg font-semibold">{item.name}</h2>
-                      <p className="text-sm text-gray-500">
-                        {item.description}
-                      </p>
-                      <div className="text-yellow-500 flex">
-                        {Array(item.rating)
-                          .fill()
-                          .map((_, i) => (
-                            <span key={i}>★</span>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-red-500 font-semibold">{item.price}</div>
-                  <div className="text-red-500 font-semibold">{item.price}</div>
-                </div>
-              ))}
-            </div>
+
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 2 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Hamburger Burger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Hamburger Burger</h3>
+            <span className="text-gray-600">
+              --------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Chow mien Fried noodles</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
           </div>
         </div>
+      </div>
 
-        <div className="flex justify-between items-center py-4 ">
-          <div className="flex items-center">
-            <img
-              src="path/to/image"
-              alt="Vegetables Burger"
-              className="w-16 h-16 rounded-full mr-4 border-2 border-red-500"
-            />
-            <div>
-              <h2 className="text-lg font-semibold flex items-center">
-                Vegetables Burger
-                <span className="flex-grow border-dotted border-t border-gray-300 mx-2"></span>
-                <span className="text-pink-500 text-xl font-bold">$27.00</span>
-              </h2>
-              <p className="text-sm text-gray-500">
-                American-inspired sushi roll
-              </p>
-              <div className="text-red-500 flex">★★★★★</div>
-            </div>
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 3 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Delicious Cheeseburger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Delicious Cheeseburger</h3>
+            <span className="text-gray-600">
+              -------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Barbecue Italian cuisine</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
           </div>
         </div>
+      </div>
 
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 4 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Brief Barger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Brief Barger</h3>
+            <span className="text-gray-600">
+              ----------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Japanese Cuisine Chicken</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+    {/* Box 2 */}
+    <div className="border-2 border-dotted border-gray-300 p-4 rounded-lg shadow-lg">
+      {/* Item 5 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Spacial Barger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Spacial Barger</h3>
+            <span className="text-gray-600">
+              -------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Barbecue Italian cuisine pizza</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 6 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Hamburger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Hamburger</h3>
+            <span className="text-gray-600">
+              ----------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Barbecue Italian cuisine pizza</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 7 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Chicken Barger"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Chicken Barger</h3>
+            <span className="text-gray-600">
+              -------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">American-inspired sushi roll</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+
+      {/* Item 8 */}
+      <div className="rounded-lg p-4 shadow-md flex items-center mb-4">
+        <img
+          src="https://via.placeholder.com/100"
+          alt="Brief Pizza"
+          className="rounded-full w-20 h-20 object-cover"
+        />
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-bold">Brief Pizza</h3>
+            <span className="text-gray-600">
+              ----------------------------------
+            </span>
+            <span className="text-lg text-red-500 font-semibold bg-red-200 p-1 rounded-lg">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">Barbecue Italian cuisine pizza</p>
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         {/* Chef Card */}
+
+        <div className="text-center mt-10">
+          <h2 className="text-red-500 font-bold text-lg">Best Food Menu</h2>
+          <h1 className="text-3xl font-bold my-4">Our Best Foods Menus</h1>
+        </div>
+
 
         <div>
           <div class="p-1 flex flex-wrap items-center justify-center">
@@ -747,6 +746,29 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="border rounded-lg p-4 max-w-md mx-auto shadow-md">
+      <div className="flex items-center">
+        {/* Image Section */}
+        <img
+          src="https://via.placeholder.com/100" // Replace with actual image URL
+          alt="Food Item"
+          className="rounded-full w-24 h-24 object-cover"
+        />
+        {/* Text Section */}
+        <div className="ml-4 flex-1">
+          <div className="flex justify-between items-center">
+            <h3 className="text-xl font-bold">Vegetables Burger</h3>
+            <span className="text-lg text-red-500 font-semibold">$27.00</span>
+          </div>
+          <p className="text-gray-500 text-sm">American-inspired sushi roll</p>
+          {/* Rating Section */}
+          <div className="flex mt-2">
+            <span className="text-red-500">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
         {/* Brand Icon Section */}
         {/* <section class="bg-white h-screen w-full flex justify-center items-center dark:bg-gray-900 p-8">
@@ -1470,6 +1492,7 @@ const Home = () => {
     </div>
         </div>
       </div>
+      <div><Footer/></div>
     </div>
   );
 };
