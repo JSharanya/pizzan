@@ -9,7 +9,7 @@ const DashboardLayout = () => {
       <DashSidebar />
 
       {/* Content Outlet */}
-      <div className="flex-1"> {/* Make sure the outlet takes the remaining space */}
+      <div className="flex-1">
         <Outlet />
       </div>
     </div>
