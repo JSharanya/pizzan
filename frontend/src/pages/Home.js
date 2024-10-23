@@ -14,64 +14,7 @@ import Reservation from "../component/Reservation";
 import Footer from "../component/Footer";
 
 const Home = () => {
-  const menuItems = [
-    {
-      name: "Vegetables Burger",
-      price: "$27.00",
-      description: "American-inspired sushi roll",
-      image: "path/to/image", // Replace with actual image paths or URLs
-      rating: 5,
-    },
-    {
-      name: "Hamburger Burger",
-      price: "$27.00",
-      description: "Chow mien Fried noodles",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Delicious Cheeseburger",
-      price: "$27.00",
-      description: "Barbecue Italian cuisine",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Brief Barger",
-      price: "$27.00",
-      description: "Japanese Cuisine Chicken",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Spacial Barger",
-      price: "$27.00",
-      description: "Barbecue Italian cuisine pizza",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Hamburger",
-      price: "$39.00",
-      description: "Barbecue Italian cuisine pizza",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Chicken Barger",
-      price: "$25.00",
-      description: "American-inspired sushi roll",
-      image: "path/to/image",
-      rating: 5,
-    },
-    {
-      name: "Brief Pizza",
-      price: "$25.00",
-      description: "Barbecue Italian cuisine pizza",
-      image: "path/to/image",
-      rating: 5,
-    },
-  ];
+
 
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -101,78 +44,7 @@ const Home = () => {
       <Navbar />
 
       {/* <img src={image_1} alt="Logo" />; */}
-      <img src="/image_1.png" alt="Description of image" />
-
-      {/* <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <section class="container mx-auto p-10 md:py-12 px-0 md:p-8 md:px-0">
-          <section class="p-5 md:p-0 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 items-start ">
-            <SwiperSlide>
-              <section class="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
-                <img
-                  src="https://www.dropbox.com/s/mlor33hzk73rh0c/x14423.png?dl=1"
-                  alt=""
-                />
-
-                <h1 class="text-3xl my-5">Soft Plushy Cushion Chair</h1>
-                <p class="mb-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio, incidunt!
-                </p>
-                <h2 class="font-semibold mb-5">$29.99</h2>
-                <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
-                  Add To Cart
-                </button>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section class="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
-                <img
-                  src="https://www.dropbox.com/s/mlor33hzk73rh0c/x14423.png?dl=1"
-                  alt=""
-                />
-
-                <h1 class="text-3xl my-5">Soft Plushy Cushion Chair</h1>
-                <p class="mb-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio, incidunt!
-                </p>
-                <h2 class="font-semibold mb-5">$29.99</h2>
-                <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
-                  Add To Cart
-                </button>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>
-              <section class="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
-                <img
-                  src="https://www.dropbox.com/s/mlor33hzk73rh0c/x14423.png?dl=1"
-                  alt=""
-                />
-
-                <h1 class="text-3xl my-5">Soft Plushy Cushion Chair</h1>
-                <p class="mb-5">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio, incidunt!
-                </p>
-                <h2 class="font-semibold mb-5">$29.99</h2>
-                <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">
-                  Add To Cart
-                </button>
-              </section>
-            </SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-          </section>
-        </section>
-      </Swiper> */}
+      <img src="/image_1.png" alt="Description of image"/>
 
       <div class="container mx-auto mt-24 text-center justify-center">
         <div class="w-full">
@@ -227,180 +99,9 @@ const Home = () => {
               </div>
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide>
-            <div
-              class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
-              style={{ backgroundColor: "#faf7f2" }}
-            >
-              <div class="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
-                <img
-                  class="relative w-40"
-                  src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
-                  alt=""
-                />
-              </div>
-              <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1 text-center text-black font-extrabold ">
-                  Indoor
-                </span>
-
-                <span class="block font-semibold text-xl text-center  text-black">
-                  Peace Lily
-                </span>
-
-                <span class="block text-xs font-bold px-2 py-2  items-center text-red-900">
-                  $36.00
-                </span>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div
-              class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
-              style={{ backgroundColor: "#faf7f2" }}
-            >
-              <div class="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
-                <img
-                  class="relative w-40"
-                  src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
-                  alt=""
-                />
-              </div>
-              <div class="relative text-white px-6 pb-6 mt-6">
-                <span class="block opacity-75 -mb-1 text-center text-black font-extrabold ">
-                  Indoor
-                </span>
-
-                <span class="block font-semibold text-xl text-center  text-black">
-                  Peace Lily
-                </span>
-
-                <span class="block text-xs font-bold px-2 py-2  items-center text-red-900">
-                  $36.00
-                </span>
-              </div>
-            </div>
-          </SwiperSlide> */}
+        
         </div>
       </Swiper>
-      {/* 
-      <div>
-        <section class="overflow-hidden bg-white py-8 sm:py-16">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y- sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-             <div>
-             <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxjb21wdXRlcnxlbnwwfDB8fHwxNjkxODE2NjY3fDA&ixlib=rb-4.0.3&q=80&w=1080"
-                alt="Product screenshot"
-                class="w-[48rem]  rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
-                width="2432"
-                height="2000"
-              />
-             </div>
-             
-              <div class="lg:pr-6 lg:pt-4">
-                <div class="lg:max-w-lg">
-                  <h2 class="text-base font-semibold leading-7 text-indigo-600">
-                    Produce faster
-                  </h2>
-                  <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    An Enterprise API
-                  </p>
-                  <p class="mt-6 text-lg leading-8 text-gray-600">
-                    We've built an API that allows you to scale your podcast
-                    production workflow.
-                  </p>
-                  <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-                    <div class="relative pl-9">
-                      <dt class="inline font-semibold text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                        >
-                          <path d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z"></path>
-                          <path d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z"></path>
-                          <path d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z"></path>
-                        </svg>
-                        Template driven
-                      </dt>
-                      <dd class="inline">
-                        Inspired by Sendgrid, Mailchimp, and Postmark, we allow
-                        you to create and apply templated content to your media.
-                      </dd>
-                    </div>
-                    <div class="relative pl-9">
-                      <dt class="inline font-semibold text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
-                            clip-rule="evenodd"
-                          ></path>
-                        </svg>
-                        Simple, REST
-                      </dt>
-                      <dd class="inline">
-                        A simple REST API that allows you to create, generate,
-                        and manage your content.
-                      </dd>
-                    </div>
-                    <div class="relative pl-9">
-                      <dt class="inline font-semibold text-gray-900">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                          class="absolute left-1 top-1 h-5 w-5 text-indigo-600"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01zM5 16a1 1 0 11-2 0 1 1 0 012 0z"
-                            clip-rule="evenodd"
-                          ></path>
-                          <path d="M14.5 11.5c.173 0 .345-.007.514-.022l3.754 3.754a2.5 2.5 0 01-3.536 3.536l-4.41-4.41 2.172-2.607c.052-.063.147-.138.342-.196.202-.06.469-.087.777-.067.128.008.257.012.387.012zM6 4.586l2.33 2.33a.452.452 0 01-.08.09L6.8 8.214 4.586 6H3.309a.5.5 0 01-.447-.276l-1.7-3.402a.5.5 0 01.093-.577l.49-.49a.5.5 0 01.577-.094l3.402 1.7A.5.5 0 016 3.31v1.277z"></path>
-                        </svg>
-                        Developer friendly{" "}
-                      </dt>
-                      <dd class="inline">
-                        Documented and easy to use, we make it easy to integrate
-                        with your existing workflow.
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-                <div class="mt-10 flex items-center gap-x-6">
-                  <a
-                    href="#"
-                    class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    Start for free
-                  </a>
-                  <a
-                    href="#"
-                    class="text-sm font-semibold leading-6 text-gray-700"
-                  >
-                    Schedule a demo
-                    <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-             
-            </div>
-          </div>
-        </section>
-      </div> */}
 
       <section className="container  mx-auto p-10 flex flex-col md:flex-row items-center justify-between">
         {/* Left Section - Image */}
@@ -468,6 +169,15 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
+      <div>
+      <img
+                src="/hero_1.png"
+                alt="CEO"
+                className=""
+              />
+      </div>
 
       <div className="bg-white py-12">
         <div className="text-center">
@@ -616,7 +326,7 @@ const Home = () => {
             </div>
 
             {/* Box 2 */}
-            <div className="border-2 border-dotted border-gray-300 p-4 rounded-lg shadow-lg">
+            <div className="border-2 border-dotted border-gray-300 p-4 rounded-lg">
               {/* Item 5 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
@@ -729,11 +439,21 @@ const Home = () => {
             </div>
           </div>
         </div>
+<div className="p-14">
+
+  <img
+                src="/hero_2.png"
+                alt="CEO"
+                className="rounded-lg "
+              />
+</div>
+        
+
         {/* Chef Card */}
 
         <div className="text-center mt-10 ">
-          <h2 className="text-red-500 font-bold text-lg">Best Food Menu</h2>
-          <h1 className="text-3xl font-bold my-4">Our Best Foods Menus</h1>
+          <h2 className="text-red-500 font-bold text-lg">Expert Chefs</h2>
+          <h1 className="text-3xl font-bold my-4">Meet our expert chefs</h1>
         </div>
 
         <div>
@@ -856,6 +576,11 @@ const Home = () => {
 
         <Reservation />
 
+        <div className="text-center mt-10 ">
+          <h2 className="text-red-500 font-bold text-lg">Blog & News</h2>
+          <h1 className="text-3xl font-bold my-4">Get Update Our Foods</h1>
+        </div>
+
         <div>
           <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
@@ -865,7 +590,7 @@ const Home = () => {
                   <a href="#">
                     <img
                       class="w-full"
-                      src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg"
                       alt="Sunset in the mountains"
                     />
                     <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
@@ -878,7 +603,7 @@ const Home = () => {
                     class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -903,7 +628,7 @@ const Home = () => {
                     class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -970,7 +695,7 @@ const Home = () => {
                   <a href="#">
                     <img
                       class="w-full"
-                      src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      src="https://img.freepik.com/premium-photo/culinary-creations-culinary-mastery-gastronomic-art-delicious-visuals-tasty-delights-food-aesth_497046-451.jpg"
                       alt="Sunset in the mountains"
                     />
                     <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
@@ -983,7 +708,7 @@ const Home = () => {
                     class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -1008,7 +733,7 @@ const Home = () => {
                     class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -1075,7 +800,7 @@ const Home = () => {
                   <a href="#">
                     <img
                       class="w-full"
-                      src="https://images.pexels.com/photos/6086/food-salad-healthy-vegetables.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6M-aj_twcaDdQ6bVg2c52cL2kp6MNlRtlw&s"
                       alt="Sunset in the mountains"
                     />
                     <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
@@ -1088,7 +813,7 @@ const Home = () => {
                     class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -1113,7 +838,7 @@ const Home = () => {
                     class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      class="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -1179,9 +904,6 @@ const Home = () => {
 
         <div>
           <div className="container mx-auto px-2 py-8">
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Food Gallery
-            </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
               <div className="w-full h-48 overflow-hidden  shadow-lg">
                 <img
@@ -1199,14 +921,14 @@ const Home = () => {
               </div>
               <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="https://images.pexels.com/photos/1639457/pexels-photo-1639457.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpePVeK-fPu_ghtzI_NsOLVduNZqoTgibunw&s"
                   alt="food-3"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
               <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQzHsOTQr4kizMfd6D4Q3iUpl7acuTdL0wqQ&s"
                   alt="food-4"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
@@ -1220,7 +942,7 @@ const Home = () => {
               </div>
               <div className="w-full h-48 overflow-hidden rounded-lg shadow-lg">
                 <img
-                  src="https://images.pexels.com/photos/411000/pexels-photo-411000.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGPVJ6DuDvbzyZDkeoL-xZvONJTLDzOzs5CA&s"
                   alt="food-6"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
