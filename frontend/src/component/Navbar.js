@@ -24,7 +24,7 @@ const Navbar = () => {
           />
         </div>
         <div class="flex-auto">
-          <div className="bg-red-600 text-sm py-1 flex justify-between items-center px-8">
+          <div className="bg-red-600 text-sm py-1 flex justify-between items-center px-8 py-1">
             <span>Free Delivery on all orders over $50</span>
             <div className="flex space-x-4 items-center">
               {/* Location Icon and Address */}
@@ -65,7 +65,7 @@ const Navbar = () => {
         </svg>
       </button> */}
 
-              <nav className="flex justify-between items-center py-2 px-8">
+              <nav className="flex justify-between items-center py-3 px-8">
                 {/* Left: Logo */}
 
                 {/* Center: Navigation links */}
