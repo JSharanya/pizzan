@@ -166,27 +166,27 @@ const UploadFood = () => {
 
   return (
     <div>
-      <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5 mt-28">
-        <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
-          <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-            <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
-              <div class="flex items-center flex-1 space-x-4"></div>
-              <div class="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
+      <section className="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5 mt-28">
+        <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
+          <div className="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+            <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+              <div className="flex items-center flex-1 space-x-4"></div>
+              <div className="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
                 <button
                   type="button"
-                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 ></button>
                 <button
                   type="button"
-                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                 ></button>
                 <button
                   type="button"
-                  class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-600 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                  className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-600 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                   onClick={handleAddClick}
                 >
                   <svg
-                    class="h-3.5 w-3.5 mr-2"
+                    className="h-3.5 w-3.5 mr-2"
                     fill="currentColor"
                     viewbox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -268,54 +268,54 @@ const UploadFood = () => {
               </div>
             )}
 
-            <table class="min-w-full divide-y divide-gray-200 mt-12">
-              <thead>
+            <table className="min-w-full divide-y divide-gray-200 mt-12">
+              <thead className='bg-blue-800'>
                 <tr>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                     Image URL
                   </th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                   Menu Name
                   </th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                   Description
                   </th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                     Price
                   </th>
 
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
               </thead>
 
               {allMenu.map((menu, index)=>
-               <tbody class="bg-white divide-y divide-gray-200" key={menu._id}>
+               <tbody className="bg-white divide-y divide-gray-200" key={menu._id}>
                <tr>
                  <th
                    scope="row"
-                   class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                   className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                  >
                    <img
                      src={menu.imageUrl}
                      alt="iMac Front Image"
-                     class="w-14 h-14 mr-3 rounded-full object-cover"
+                     className="w-14 h-14 mr-3 rounded-full object-cover"
                    />
                    
                  </th>
-                 <td class=" py-4 whitespace-nowrap">{menu.name}</td>
-                 <td class="px-6 py-4 whitespace-nowrap">{menu.description}</td>
-                 <td class="px-6 py-4 whitespace-nowrap">LKR {menu.price}</td>
+                 <td className=" py-4 whitespace-nowrap">{menu.name}</td>
+                 <td className="px-6 py-4 whitespace-nowrap">{menu.description}</td>
+                 <td className="px-6 py-4 whitespace-nowrap">LKR {menu.price}</td>
 
-                 <td class="px-6 py-4 whitespace-nowrap">
-                   <button class="px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out"
+                 <td className="px-6 py-4 whitespace-nowrap">
+                   <button className="px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out"
                    onClick={() => handleEditClick(menu)}>
                      Edit
                    </button>
                    <button 
                    onClick={() => handleDeleteClick(menu._id)}
-                   class="ml-2 px-4 py-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
+                   className="ml-2 px-4 py-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline-red active:bg-red-600 transition duration-150 ease-in-out">
                      Delete
                    </button>
                  </td>

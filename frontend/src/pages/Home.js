@@ -14,8 +14,6 @@ import Reservation from "../component/Reservation";
 import Footer from "../component/Footer";
 
 const Home = () => {
-
-
   const [menu, setMenu] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,16 +42,16 @@ const Home = () => {
       <Navbar />
 
       {/* <img src={image_1} alt="Logo" />; */}
-      <img src="/image_1.png" alt="Description of image"/>
+      <img src="/image_1.png" alt="Description of image" />
 
-      <div class="container mx-auto mt-24 text-center justify-center">
-        <div class="w-full">
-          <div class="flex flex-col items-center">
-            <div class="mb-8">
-              <span class=" text-red-700 font-bold text-xl">
+      <div className="container mx-auto mt-24 text-center justify-center">
+        <div className="w-full">
+          <div className="flex flex-col items-center">
+            <div className="mb-8">
+              <span className=" text-red-700 font-bold text-xl">
                 Best Food menu
               </span>
-              <h2 class="text-3xl font-bold mt-3">Our Popular Food Items</h2>
+              <h2 className="text-3xl font-bold mt-3">Our Popular Food Items</h2>
             </div>
           </div>
         </div>
@@ -68,38 +66,42 @@ const Home = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <div class="p-1 flex flex-wrap items-center justify-center">
+        <div className="p-1 flex flex-wrap items-center justify-center">
           {menu.map((menu) => (
             <SwiperSlide key={menu._id}>
               <div
-                class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
+                className="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg group"
                 style={{ backgroundColor: "#faf7f2" }}
               >
-                <div class="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
+
+                
+                <div className="relative pt-10 px-10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"></div>
                   <img
-                    class="w-40 h-40 rounded-full object-cover"
+                    className="w-40 h-40 rounded-full object-cover"
                     src={menu.imageUrl}
                     alt={menu.name}
                   />
+                   <span className="absolute top-12 left-8 bg-red-600 text-white text-xs font-bold py-1 px-2 rounded-full">
+          24% <br />OFF
+        </span>
                 </div>
-                <div class="relative text-white px-6 pb-6 mt-6">
-                  <span class="block opacity-75 -mb-1 text-center text-black font-extrabold ">
+                <div className="relative text-white px-6 pb-6 mt-6">
+                  <span className="block opacity-75 -mb-1 text-center text-black font-extrabold ">
                     {menu.name}
                   </span>
 
-                  <span class="block text-sm text-center pt-3 text-black">
+                  <span className="block text-sm text-center pt-3 text-black">
                     {menu.description}
                   </span>
 
-                  <span class="block text-xs font-bold px-2 py-2  items-center text-red-900">
+                  <span className="block text-xs font-bold px-2 py-2  items-center text-red-900">
                     LKR {menu.price}
                   </span>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-        
         </div>
       </Swiper>
 
@@ -170,13 +172,8 @@ const Home = () => {
         </div>
       </section>
 
-
       <div>
-      <img
-                src="/hero_1.png"
-                alt="CEO"
-                className=""
-              />
+        <img src="/hero_1.png" alt="CEO" className="" />
       </div>
 
       <div className="bg-white py-12">
@@ -217,7 +214,7 @@ const Home = () => {
               {/* Item 1 */}
               <div className=" rounded-lg p-2  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://img.freepik.com/premium-photo/vegetarian-burger-with-variety-fresh-vegetables-tender-lettuce-leaves_124507-67662.jpg"
                   alt="Vegetables Burger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -240,12 +237,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 2 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1110,c_fill"
                   alt="Hamburger Burger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -268,12 +265,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 3 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://www.foodandwine.com/thmb/fjNakOY7IcuvZac1hR3JcSo7vzI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/FAW-recipes-pasta-sausage-basil-and-mustard-hero-06-cfd1c0a2989e474ea7e574a38182bbee.jpg"
                   alt="Delicious Cheeseburger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -296,12 +293,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 4 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://production-assets.gousto.co.uk/build/7050f50349ae31dd7a7486c55024fe35e0de1bf2/856bca25c1c2cbaf608d598f844c1a05.jpg"
                   alt="Brief Barger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -330,7 +327,7 @@ const Home = () => {
               {/* Item 5 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkB_97VXNUYlph5k7DJPSFgI8Rq3o_fwLwKXQCLs367r-XY3ijtJRnOWZwysTX2qrgDOw&usqp=CAU"
                   alt="Spacial Barger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -353,12 +350,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 6 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://images.immediate.co.uk/production/volatile/sites/30/2022/08/Corndogs-7832ef6.jpg?quality=90&resize=556,505"
                   alt="Hamburger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -381,12 +378,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 7 */}
               <div className="rounded-lg p-4  flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://www.foodrepublic.com/img/gallery/100-italian-fooddrink-words-and-phrases/l-intro-1684783348.jpg"
                   alt="Chicken Barger"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -409,12 +406,12 @@ const Home = () => {
                 </div>
               </div>
 
-              <hr class="border border-dotted w-11/12 mx-auto border-gray-300" />
+              <hr className="border border-dotted w-11/12 mx-auto border-gray-300" />
 
               {/* Item 8 */}
               <div className="rounded-lg p-4 flex items-center mb-4">
                 <img
-                  src="https://via.placeholder.com/100"
+                  src="https://thumbs.dreamstime.com/b/vibrant-traditional-indian-dish-samosas-decorative-plate-placed-colorful-tablecloth-festive-independence-day-321774548.jpg"
                   alt="Brief Pizza"
                   className="rounded-full w-20 h-20 object-cover"
                 />
@@ -439,15 +436,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-<div className="p-14">
-
-  <img
-                src="/hero_2.png"
-                alt="CEO"
-                className="rounded-lg "
-              />
-</div>
-        
+        <div className="p-14">
+          <img src="/hero_2.png" alt="CEO" className="rounded-lg " />
+        </div>
 
         {/* Chef Card */}
 
@@ -457,33 +448,33 @@ const Home = () => {
         </div>
 
         <div>
-          <div class="p-1 flex flex-wrap items-center justify-center ">
-            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+          <div className="p-1 flex flex-wrap items-center justify-center ">
+            <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
               <img
-                class=" object-cover w-64 h-80"
+                className=" object-cover w-64 h-80"
                 src="https://www.josejeuland.com/wp-content/uploads/2022/04/onsiteheadshot.jpg"
                 alt=""
               />
             </div>
-            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+            <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
               <img
-                class=" object-cover w-64 h-80"
+                className=" object-cover w-64 h-80"
                 src="https://media.istockphoto.com/id/1298088270/photo/young-beautiful-smiling-woman-chef-with-arms-crossed-at-kitchen.jpg?s=612x612&w=0&k=20&c=ZtYaFLtiRkuA6mQ8HK05xjZNvpb4ev2BS9g2Uc6mdww="
                 alt=""
               />
             </div>
-            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+            <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
               <img
-                class=" object-cover w-64 h-80 items-center"
+                className=" object-cover w-64 h-80 items-center"
                 src="https://i.pinimg.com/originals/d2/35/47/d2354797cfb995122e8bf0248cb1fd76.png"
                 alt=""
               />
             </div>
 
-            <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+            <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
               <img
-                class=" object-cover w-64 h-80"
-                src="https://media.gettyimages.com/id/1341912094/photo/portrait-of-a-successful-chef-at-a-restaurant-and-smiling.jpg?s=612x612&w=gi&k=20&c=50dCFawK5sCSIHpMkswvxeVaLzOMvSwQkM3P3wwn91A="
+                className=" object-cover w-64 h-80"
+                src="https://i.pinimg.com/736x/5f/9c/91/5f9c91fc2df3edb394de5aa2dd51e408.jpg"
                 alt=""
               />
             </div>
@@ -491,19 +482,18 @@ const Home = () => {
         </div>
 
         <div>
-          <h3 class="flex items-center w-full px-32  mt-10">
-            <span class="flex-grow bg-gray-200 rounded h-0.5"></span>
-            <span class="mx-5 text-lg font-medium">
+          <h3 className="flex items-center w-full px-32  mt-10">
+            <span className="flex-grow bg-gray-200 rounded h-0.5"></span>
+            <span className="mx-5 text-lg font-medium">
               Global 5K+ Happy Sponsors With us
             </span>
-            <span class="flex-grow bg-gray-200 rounded h-1"></span>
+            <span className="flex-grow bg-gray-200 rounded h-0.5"></span>
           </h3>
 
           <div>
-            <section class="py-base container mt-10 mb-28 px-24">
-              <div class="grid gap-8 grid-cols-2 md:gap-y-16 md:grid-cols-6">
-                <span class="w-full flex items-center justify-center">
-              
+            <section className="py-base container mt-10 mb-28 px-24">
+              <div className="grid gap-8 grid-cols-2 md:gap-y-16 md:grid-cols-6">
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
                     <img
                       src="https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_2-1.svg"
@@ -513,8 +503,7 @@ const Home = () => {
                     />
                   </div>
                 </span>
-                <span class="w-full flex items-center justify-center">
-                
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
                     <img
                       src="https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_3-1.svg"
@@ -524,8 +513,7 @@ const Home = () => {
                     />
                   </div>
                 </span>
-                <span class="w-full flex items-center justify-center">
-           
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
                     <img
                       src="https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_4-1.svg"
@@ -535,8 +523,7 @@ const Home = () => {
                     />
                   </div>
                 </span>
-                <span class="w-full flex items-center justify-center">
-              
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
                     <img
                       src="https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_5-1.svg"
@@ -546,8 +533,7 @@ const Home = () => {
                     />
                   </div>
                 </span>
-                <span class="w-full flex items-center justify-center">
-                 
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
                     <img
                       src="https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_6-1.svg"
@@ -557,11 +543,9 @@ const Home = () => {
                     />
                   </div>
                 </span>
-                <span class="w-full flex items-center justify-center">
-              
+                <span className="w-full flex items-center justify-center">
                   <div aria-hidden="true">
-                 
-                  <img
+                    <img
                       src=" https://themeholy.com/wordpress/pizzan/wp-content/uploads/2023/06/brand_2_7-1.svg"
                       alt="Spacial Barger"
                       className="w-20 h-20 object-cover"
@@ -582,28 +566,28 @@ const Home = () => {
         </div>
 
         <div>
-          <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                    <div class="rounded overflow-hidden shadow-lg flex flex-col">
+          <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+              <div className="rounded overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
-                <div class="relative">
+                <div className="relative">
                   <a href="#">
                     <img
-                      class="w-full"
+                      className="w-full"
                       src="https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg"
                       alt="Sunset in the mountains"
                     />
-                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                    <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
                   </a>
                   <a href="#!"></a>
                 </div>
-                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                <div className="flex flex-1 gap-2 px-6 pt-4 ">
                   <span
                     href="#"
-                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -620,15 +604,15 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">16 Nov, 2022</span>
+                    <span className="ml-1">16 Nov, 2022</span>
                   </span>
                   <div> | </div>
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -645,30 +629,29 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">2 Comments</span>
+                    <span className="ml-1">2 Comments</span>
                   </span>
                 </div>
-                <div class="px-6 py-4 mb-auto">
+                <div className="px-6 py-4 mb-auto">
                   <a
                     href="#"
-                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                    className="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
                   >
-                    Best FastFood Ideas (Yummy)
+                    Easiest ever seafood rice
                   </a>
-                  <p class="text-gray-500 text-sm">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                  <p className="text-gray-500 text-sm">
+                  Using pre-prepared mixed seafood makes this healthy rice dish very easy to put together. Plus, using one-pot means you save on washing up.
                   </p>
                 </div>
-                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
-                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                <hr className="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div className="px-6 py-3 flex flex-row items-center justify-between  ">
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
-                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <span className="ml-1 font-semibold">READ MORE </span>
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      className="w-6 h-6 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -685,30 +668,30 @@ const Home = () => {
                       />
                     </svg>
                   </span>
-                  <hr class="border-t-1  border-black" />
+                  <hr className="border-t-1  border-black" />
                 </div>
               </div>
 
-              <div class="rounded overflow-hidden shadow-lg flex flex-col">
+              <div className="rounded overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
-                <div class="relative">
+                <div className="relative">
                   <a href="#">
                     <img
-                      class="w-full"
+                      className="w-full"
                       src="https://img.freepik.com/premium-photo/culinary-creations-culinary-mastery-gastronomic-art-delicious-visuals-tasty-delights-food-aesth_497046-451.jpg"
                       alt="Sunset in the mountains"
                     />
-                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                    <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
                   </a>
                   <a href="#!"></a>
                 </div>
-                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                <div className="flex flex-1 gap-2 px-6 pt-4 ">
                   <span
                     href="#"
-                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -725,15 +708,15 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">16 Nov, 2022</span>
+                    <span className="ml-1">16 Nov, 2022</span>
                   </span>
                   <div> | </div>
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -750,30 +733,29 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">2 Comments</span>
+                    <span className="ml-1">2 Comments</span>
                   </span>
                 </div>
-                <div class="px-6 py-4 mb-auto">
+                <div className="px-6 py-4 mb-auto">
                   <a
                     href="#"
-                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                    className="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
                   >
                     Best FastFood Ideas (Yummy)
                   </a>
-                  <p class="text-gray-500 text-sm">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                  <p className="text-gray-500 text-sm">
+                  Using pre-prepared  FastFood Ideas makes this healthy  dish very easy to put together. Plus, using one-pot means you save on washing up.
                   </p>
                 </div>
-                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
-                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                <hr className="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div className="px-6 py-3 flex flex-row items-center justify-between  ">
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
-                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <span className="ml-1 font-semibold">READ MORE </span>
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      className="w-6 h-6 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -790,30 +772,30 @@ const Home = () => {
                       />
                     </svg>
                   </span>
-                  <hr class="border-t-1  border-black" />
+                  <hr className="border-t-1  border-black" />
                 </div>
               </div>
 
-              <div class="rounded overflow-hidden shadow-lg flex flex-col">
+              <div className="rounded overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
-                <div class="relative">
+                <div className="relative">
                   <a href="#">
                     <img
-                      class="w-full"
+                      className="w-full"
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx6M-aj_twcaDdQ6bVg2c52cL2kp6MNlRtlw&s"
                       alt="Sunset in the mountains"
                     />
-                    <div class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
+                    <div className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25"></div>
                   </a>
                   <a href="#!"></a>
                 </div>
-                <div class="flex flex-1 gap-2 px-6 pt-4 ">
+                <div className="flex flex-1 gap-2 px-6 pt-4 ">
                   <span
                     href="#"
-                    class=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className=" text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -830,15 +812,15 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">16 Nov, 2022</span>
+                    <span className="ml-1">16 Nov, 2022</span>
                   </span>
                   <div> | </div>
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
                     <svg
-                      class="w-6 h-6 text-red-700"
+                      className="w-6 h-6 text-red-700"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -855,30 +837,29 @@ const Home = () => {
                       />
                     </svg>
 
-                    <span class="ml-1">2 Comments</span>
+                    <span className="ml-1">2 Comments</span>
                   </span>
                 </div>
-                <div class="px-6 py-4 mb-auto">
+                <div className="px-6 py-4 mb-auto">
                   <a
                     href="#"
-                    class="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
+                    className="font-medium text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2"
                   >
                     Why to eat salad?
                   </a>
-                  <p class="text-gray-500 text-sm">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                  <p className="text-gray-500 text-sm">
+                  Using pre-prepared  Salad Ideas makes this healthy Salad very easy to put together. Plus, using one-pot means you save on washing up
                   </p>
                 </div>
-                <hr class="border-t-1 w-11/12 mx-auto border-gray-300" />
-                <div class="px-6 py-3 flex flex-row items-center justify-between  ">
+                <hr className="border-t-1 w-11/12 mx-auto border-gray-300" />
+                <div className="px-6 py-3 flex flex-row items-center justify-between  ">
                   <span
                     href="#"
-                    class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
+                    className="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center"
                   >
-                    <span class="ml-1 font-semibold">READ MORE </span>
+                    <span className="ml-1 font-semibold">READ MORE </span>
                     <svg
-                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      className="w-6 h-6 text-gray-800 dark:text-white"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -895,7 +876,7 @@ const Home = () => {
                       />
                     </svg>
                   </span>
-                  <hr class="border-t-1  border-black" />
+                  <hr className="border-t-1  border-black" />
                 </div>
               </div>
             </div>

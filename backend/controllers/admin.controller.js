@@ -1,9 +1,9 @@
 import Admin from '../models/admin.model.js';
-import bcrypt from 'bcrypt';
 import bcryptjs from "bcryptjs";
 import jwt from 'jsonwebtoken';
+import { errorHandler } from "../utils/error.js";
 
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
   const { email, password } = req.body;
 
   // Check if email and password are provided
@@ -47,7 +47,7 @@ export const login = async (req, res) => {
 };
 
 // Registration controller (protected by token)
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
   const {adminname , email, password } = req.body;
 
   if (
