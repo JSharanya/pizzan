@@ -1,80 +1,150 @@
-import React from 'react'
-
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CiLocationOn } from "react-icons/ci";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaSearch,
+  FaShoppingCart,
+} from "react-icons/fa";
 const Navbar = () => {
   return (
     <div>
-          <header className="bg-black text-white">
-    {/* Top Row with Logo and Free Delivery Banner */}
-    <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center py-4">
-      {/* Logo and Free Delivery */}
-      <div className="flex items-center space-x-4 mb-4 sm:mb-0">
-        <div className="text-red-600 font-bold text-xl">
-          <span className="flex items-center">
-            <span className="text-3xl">🍴</span>
-            <span className="ml-2">PIZZAN</span>
-          </span>
-        </div>
-        <div className="hidden sm:block bg-red-600 text-white py-1 px-3 rounded-full text-xs lg:text-sm">
-          Free Delivery on all orders Over $50
-        </div>
-      </div>
-
-      {/* Contact and Search Section */}
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center space-x-2">
-          <span className="text-red-600">📞</span>
-          <div className="text-xs lg:text-sm">
-            <span>Call Anytime</span>
-            <br />
-            <span className="font-bold">+123 (302) 555-0107</span>
-          </div>
-        </div>
-        <div className="relative">
-          <input
-            className="border border-white bg-black p-2 rounded-full text-white text-xs lg:text-sm"
-            type="text"
-            placeholder="Search"
+      <div class="flex font-sans bg-customDarkBlue text-white">
+        <div class="flex-none w-64 relative">
+          <img
+            src="/logo.png"
+            alt=""
+            class="absolute items-center object-cover"
+            loading="lazy"
           />
         </div>
-        <div className="relative cursor-pointer">
-          <span>🛒</span>
-          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold rounded-full px-2">0</span>
-        </div>
-        <button className="hidden sm:block bg-red-600 text-white py-2 px-3 rounded-full text-xs lg:text-sm">
-          BOOK A TABLE
+        <div class="flex-auto">
+          <div className="bg-red-600 text-sm py-1 flex justify-between items-center px-8">
+            <span>Free Delivery on all orders over $50</span>
+            <div className="flex space-x-4 items-center">
+              {/* Location Icon and Address */}
+              <div className="flex items-center space-x-1">
+                <FaMapMarkerAlt />
+                <p className="text-sm">Rd. Allentown, New Mexico 31134</p>
+              </div>
+              {/* Social Media Icons */}
+              <span>|</span>
+              <a href="#" className="text-white">
+                <FaFacebook />
+              </a>
+              <a href="#" className="text-white">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-white">
+                <FaLinkedin />
+              </a>
+              <a href="#" className="text-white">
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              {/* <div class="flex-auto flex space-x-4">
+        <button class="h-10 px-6 font-semibold rounded-md bg-black text-white" type="submit">
+          Buy now
         </button>
-      </div>
-    </div>
+        <button class="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900" type="button">
+          Add to bag
+        </button>
+      </div> */}
+              {/* <button class="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
+        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+        </svg>
+      </button> */}
 
-    {/* Navigation Menu */}
-    <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 py-3 border-t border-gray-700">
-      <div className="flex flex-wrap justify-center sm:justify-start space-x-4 text-xs sm:text-sm lg:text-base">
-        <span className="cursor-pointer">HOME +</span>
-        <span className="cursor-pointer">MENU +</span>
-        <span className="cursor-pointer">SHOP +</span>
-        <span className="cursor-pointer">PAGES +</span>
-        <span className="cursor-pointer">BLOG +</span>
-        <span className="cursor-pointer">CONTACT US</span>
-      </div>
-      <button className="sm:hidden bg-red-600 text-white py-2 px-3 rounded-full text-xs lg:text-sm">
-        BOOK A TABLE
-      </button>
-    </div>
+              <nav className="flex justify-between items-center py-2 px-8">
+                {/* Left: Logo */}
 
-    {/* Bottom Row with Location and Social Icons */}
-    <div className="bg-gray-900 py-2">
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-xs lg:text-sm">
-        <div className="flex justify-center sm:justify-start">📍 Rd. Allentown, New Mexico 31134</div>
-        <div className="flex space-x-3 mt-2 sm:mt-0">
-          <span className="cursor-pointer">🔗</span>
-          <span className="cursor-pointer">🔗</span>
-          <span className="cursor-pointer">🔗</span>
+                {/* Center: Navigation links */}
+                <ul className="flex space-x-8 text-sm uppercase">
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Home +
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Menu +
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Shop +
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Pages +
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Blog +
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-red-500">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+
+                {/* Right: Contact and Call to Action */}
+                <div className="flex items-center space-x-6">
+                  <div className="bg-[#010F1C] text-white  px-2 flex justify-between items-center">
+                    {/* Call Section */}
+                    <div className="flex items-center space-x-2 mr-5">
+                      <FaPhone size={24} className="text-red-600" />
+                      <div>
+                        <p className="text-sm text-gray-400">Call Anytime</p>
+                        <p className="text-sm font-bold">+123 (302) 555-0107</p>
+                      </div>
+                    </div>
+
+                    {/* Search, Cart, and Book Button */}
+                    <div className="flex items-center space-x-6">
+                      {/* Search Icon */}
+                      <FaSearch className="text-white cursor-pointer" />
+
+                      {/* Cart Icon with Badge */}
+                      <div className="relative cursor-pointer p-2">
+                        <FaShoppingCart size={24} className="text-white" />
+                        <span className="absolute top-0 right-0 bg-red-600 rounded-full px-2 text-xs">
+                          0
+                        </span>
+                      </div>
+
+                      {/* Book a Table Button */}
+                      <button className="bg-red-600 text-white font-bold py-2 px-6 rounded flex items-center">
+                        BOOK A TABLE <span className="ml-2">→</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+
+          {/* <p class="text-sm text-slate-700">
+      Free shipping on all continental US orders.
+    </p> */}
         </div>
       </div>
     </div>
-  </header>
-    </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
